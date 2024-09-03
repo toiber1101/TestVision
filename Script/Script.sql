@@ -66,6 +66,22 @@ VALUES
 ('9780061120084', 'Matar a un Ruiseñor', 'Harper Lee', '1960-07-11', 5),
 ('9780140187194', 'La Metamorfosis', 'Franz Kafka', '1915-10-15', 3);
 GO
+
+-----Insertar registros en la tabla prestamos----------------
+-- Registrar préstamos de libros
+INSERT INTO prestamos
+    (id_usuario, id_libro, fecha_prestamo, fecha_devolucion, estado)
+VALUES
+    (1, 3, '2024-09-01', NULL, 0),
+    -- Juan Pérez prestó 'La Sombra del Viento'
+    (2, 5, '2024-09-02', NULL, 0),
+    -- María López prestó '1984'
+    (3, 1, '2024-09-03', '2024-09-10', 1),
+    -- Carlos García prestó 'Cien Años de Soledad' y ya lo devolvió
+    (4, 7, '2024-09-04', NULL, 0),
+    -- Ana Torres prestó 'El Principito'
+    (5, 9, '2024-09-05', NULL, 0);  -- Luis Martínez prestó 'Matar a un Ruiseñor'
+GO
 -------------consultas
 -- Consulta para mostrar todos los usuarios que tienen actualmente libros prestados junto con la información de los libros
 SELECT u.nombre, u.correo, l.titulo, l.autor
